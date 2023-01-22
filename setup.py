@@ -9,7 +9,9 @@ setup(
     author_email='kirk.meyer@alpaxo.com',
     license='MIT',
     platforms='any',
-    py_modules=['manager_api'],
+    packages=[
+        'manager_api'
+    ],
     install_requires=[
         'inflection',
         'pydantic',
