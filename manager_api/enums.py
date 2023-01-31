@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Do not edit. Automatically generated from Manager v23.1.11.592.
 
@@ -6,399 +5,399 @@ from typing import Literal
 
 
 StringOperator = Literal[
-    'Contains',
-    'DoesNotContain',
-    'IsEmpty',
-    'IsNotEmpty',
+ "Contains",
+ "DoesNotContain",
+ "IsEmpty",
+ "IsNotEmpty",
 ]
 
 DecimalOperator = Literal[
-    'IsLessThan',
-    'IsMoreThan',
-    'IsNotZero',
-    'IsZero',
+ "IsLessThan",
+ "IsMoreThan",
+ "IsNotZero",
+ "IsZero",
 ]
 
 BooleanOperator = Literal[
-    'IsChecked',
-    'IsNotChecked',
+ "IsChecked",
+ "IsNotChecked",
 ]
 
 DateOperator = Literal[
-    'IsBetween',
+ "IsBetween",
 ]
 
 ObjectOperator = Literal[
-    'Is',
-    'IsNot',
-    'IsEmpty',
-    'IsNotEmpty',
+ "Is",
+ "IsNot",
+ "IsEmpty",
+ "IsNotEmpty",
 ]
 
 LocationType = Literal[
-    'Custom',
-    'Everywhere',
+ "Custom",
+ "Everywhere",
 ]
 
 FieldType = Literal[
-    'String',
-    'Decimal',
-    'Boolean',
-    'Date',
-    'Object',
+ "String",
+ "Decimal",
+ "Boolean",
+ "Date",
+ "Object",
 ]
 
 ColumnCount = Literal[
-    'Two',
-    'Three',
-    'Four',
-    'Five',
-    'Six',
+ "Two",
+ "Three",
+ "Four",
+ "Five",
+ "Six",
 ]
 
 UserType = Literal[
-    'Administrator',
-    'Restricted',
+ "Administrator",
+ "Restricted",
 ]
 
 Visibility = Literal[
-    'Visible',
-    'Hidden',
+ "Visible",
+ "Hidden",
 ]
 
 PermittedActions = Literal[
-    'ViewCreateUpdateDelete',
-    'ViewCreateUpdate',
-    'ViewCreate',
-    'View',
+ "ViewCreateUpdateDelete",
+ "ViewCreateUpdate",
+ "ViewCreate",
+ "View",
 ]
 
 AccountingBasis = Literal[
-    'AccrualBasis',
-    'CashBasis',
+ "AccrualBasis",
+ "CashBasis",
 ]
 
 AmountType = Literal[
-    'AnyAmount',
-    'Exactly',
-    'MoreThan',
-    'LessThan',
+ "AnyAmount",
+ "Exactly",
+ "MoreThan",
+ "LessThan",
 ]
 
 BalanceSheetLayout = Literal[
-    'AssetsLiabilitiesEqualsEquity',
-    'AssetsEqualsLiabilitiesEquity',
-    'AssetsEqualsEquityLiabilities',
+ "AssetsLiabilitiesEqualsEquity",
+ "AssetsEqualsLiabilitiesEquity",
+ "AssetsEqualsEquityLiabilities",
 ]
 
 BankAccountClearStatus = Literal[
-    'OnTheSameDate',
-    'OnALaterDate',
+ "OnTheSameDate",
+ "OnALaterDate",
 ]
 
 BankClearStatus = Literal[
-    'Pending',
-    'Cleared',
+ "Pending",
+ "Cleared",
 ]
 
 BillableTimeStatus = Literal[
-    'Uninvoiced',
-    'Invoiced',
-    'WrittenOff',
+ "Uninvoiced",
+ "Invoiced",
+ "WrittenOff",
 ]
 
 CashAccountType = Literal[
-    'CashAtBank',
-    'CashOnHand',
+ "CashAtBank",
+ "CashOnHand",
 ]
 
 CashFlowStatementCategory = Literal[
-    'OperatingActivities',
-    'InvestingActivities',
-    'FinancingActivities',
-    'CashAndCashEquivalents',
+ "OperatingActivities",
+ "InvestingActivities",
+ "FinancingActivities",
+ "CashAndCashEquivalents",
 ]
 
 CashFlowStatementMethod = Literal[
-    'IndirectMethod',
-    'DirectMethod',
+ "IndirectMethod",
+ "DirectMethod",
 ]
 
 ControlAccountType = Literal[
-    'BankAccounts',
-    'Customers',
-    'Suppliers',
-    'InventoryItems',
-    'FixedAssets',
-    'IntangibleAssets',
-    'SpecialAccounts',
-    'Employees',
-    'CapitalAccounts',
-    'FixedAssetsAccumulatedDepreciation',
-    'IntangibleAssetsAccumulatedAmortization',
-    'Investments',
+ "BankAccounts",
+ "Customers",
+ "Suppliers",
+ "InventoryItems",
+ "FixedAssets",
+ "IntangibleAssets",
+ "SpecialAccounts",
+ "Employees",
+ "CapitalAccounts",
+ "FixedAssetsAccumulatedDepreciation",
+ "IntangibleAssetsAccumulatedAmortization",
+ "Investments",
 ]
 
 CreditNoteType = Literal[
-    'Custom',
-    'EarlyPaymentDiscount',
+ "Custom",
+ "EarlyPaymentDiscount",
 ]
 
 CustomerField = Literal[
-    'Name',
-    'Code',
-    'BillingAddress',
-    'Email',
-    'CustomField',
+ "Name",
+ "Code",
+ "BillingAddress",
+ "Email",
+ "CustomField",
 ]
 
 CustomFieldPlacement = Literal[
-    'BusinessDetails',
-    'BankAndCashAccounts',
-    'Receipts',
-    'Payments',
-    'InterAccountTransfers',
-    'Customers',
-    'Suppliers',
-    'Employees',
-    'CreditNotes',
-    'CreditNoteLines',
-    'DebitNotes',
-    'DebitNoteLines',
-    'SalesInvoices',
-    'SalesInvoiceLines',
-    'WithholdingTaxReceipts',
-    'SalesQuotes',
-    'SalesQuoteLines',
-    'SalesOrders',
-    'SalesOrderLines',
-    'BillableTime',
-    'DeliveryNotes',
-    'DeliveryNoteLines',
-    'GoodsReceipts',
-    'GoodsReceiptLines',
-    'InventoryTransfers',
-    'InventoryTransferLines',
-    'Payslips',
-    'JournalEntries',
-    'InventoryItems',
-    'InventoryWriteOffs',
-    'FixedAssets',
-    'IntangibleAssets',
-    'ExpenseClaims',
-    'PurchaseInvoices',
-    'PurchaseQuotes',
-    'PurchaseOrders',
-    'ProductionOrders',
-    'CapitalAccounts',
-    'SpecialAccounts',
-    'Folders',
-    'NonInventoryItems',
-    'TaxCodes',
+ "BusinessDetails",
+ "BankAndCashAccounts",
+ "Receipts",
+ "Payments",
+ "InterAccountTransfers",
+ "Customers",
+ "Suppliers",
+ "Employees",
+ "CreditNotes",
+ "CreditNoteLines",
+ "DebitNotes",
+ "DebitNoteLines",
+ "SalesInvoices",
+ "SalesInvoiceLines",
+ "WithholdingTaxReceipts",
+ "SalesQuotes",
+ "SalesQuoteLines",
+ "SalesOrders",
+ "SalesOrderLines",
+ "BillableTime",
+ "DeliveryNotes",
+ "DeliveryNoteLines",
+ "GoodsReceipts",
+ "GoodsReceiptLines",
+ "InventoryTransfers",
+ "InventoryTransferLines",
+ "Payslips",
+ "JournalEntries",
+ "InventoryItems",
+ "InventoryWriteOffs",
+ "FixedAssets",
+ "IntangibleAssets",
+ "ExpenseClaims",
+ "PurchaseInvoices",
+ "PurchaseQuotes",
+ "PurchaseOrders",
+ "ProductionOrders",
+ "CapitalAccounts",
+ "SpecialAccounts",
+ "Folders",
+ "NonInventoryItems",
+ "TaxCodes",
 ]
 
 CustomFieldSize = Literal[
-    'Small',
-    'Medium',
-    'Large',
+ "Small",
+ "Medium",
+ "Large",
 ]
 
 CustomFieldStyle = Literal[
-    'SingleLineText',
-    'ParagraphText',
-    'DropdownList',
-    'Image',
-    'Date',
-    'Number',
+ "SingleLineText",
+ "ParagraphText",
+ "DropdownList",
+ "Image",
+ "Date",
+ "Number",
 ]
 
 DateType = Literal[
-    'Today',
-    'Custom',
+ "Today",
+ "Custom",
 ]
 
 DebitCredit = Literal[
-    'Debit',
-    'Credit',
+ "Debit",
+ "Credit",
 ]
 
 DeliveryNoteColumns = Literal[
-    'DeliveryDate',
-    'Reference',
-    'SalesInvoice',
-    'InventoryLocation',
-    'Customer',
-    'Description',
-    'CustomFields2',
-    'CustomFields',
-    'OrderNumber',
-    'InvoiceNumber',
+ "DeliveryDate",
+ "Reference",
+ "SalesInvoice",
+ "InventoryLocation",
+ "Customer",
+ "Description",
+ "CustomFields2",
+ "CustomFields",
+ "OrderNumber",
+ "InvoiceNumber",
 ]
 
 DepreciationMethod = Literal[
-    'Manual',
-    'StraightLine',
-    'DecliningBalance',
+ "Manual",
+ "StraightLine",
+ "DecliningBalance",
 ]
 
 DisbursementStatus = Literal[
-    'Uninvoiced',
-    'Invoiced',
-    'WrittenOff',
+ "Uninvoiced",
+ "Invoiced",
+ "WrittenOff",
 ]
 
 DiscountType = Literal[
-    'Percentage',
-    'ExactAmount',
+ "Percentage",
+ "ExactAmount",
 ]
 
 DueDateType = Literal[
-    'Net',
-    'By',
+ "Net",
+ "By",
 ]
 
 DueDateType2 = Literal[
-    'By',
-    'Net',
+ "By",
+ "Net",
 ]
 
 EmailFormat = Literal[
-    'Link',
-    'PDF',
+ "Link",
+ "PDF",
 ]
 
 ExchangeRateType = Literal[
-    'BaseRate',
-    'CounterRate',
+ "BaseRate",
+ "CounterRate",
 ]
 
 ExpirationType = Literal[
-    'UntilFurtherNotice',
-    'Custom',
+ "UntilFurtherNotice",
+ "Custom",
 ]
 
 FirstDayOfWeek = Literal[
-    'Monday',
-    'Sunday',
-    'Saturday',
+ "Monday",
+ "Sunday",
+ "Saturday",
 ]
 
 InventoryLocationType = Literal[
-    'InventoryOnHand',
-    'Customer',
-    'Supplier',
+ "InventoryOnHand",
+ "Customer",
+ "Supplier",
 ]
 
 LatePaymentFeesType = Literal[
-    'DoNotCharge',
-    'ChargeMonthly',
+ "DoNotCharge",
+ "ChargeMonthly",
 ]
 
 PageSize = Literal[
-    'A4',
-    'Letter',
+ "A4",
+ "Letter",
 ]
 
 PayerPayeeType = Literal[
-    'Customer',
-    'Supplier',
-    'Other',
+ "Customer",
+ "Supplier",
+ "Other",
 ]
 
 Period = Literal[
-    'Month',
-    'Week',
-    'Day',
+ "Month",
+ "Week",
+ "Day",
 ]
 
 ProfitAndLossStatementGroupType = Literal[
-    'IncomeGroup',
-    'ExpenseGroup',
-    'SubgroupOf',
+ "IncomeGroup",
+ "ExpenseGroup",
+ "SubgroupOf",
 ]
 
 Repeat = Literal[
-    'Never',
-    'EveryDay',
-    'EveryWeek',
-    'EveryTwoWeeks',
-    'EveryMonth',
-    'EveryTwoMonths',
-    'EveryThreeMonths',
-    'EverySixMonths',
-    'EveryYear',
+ "Never",
+ "EveryDay",
+ "EveryWeek",
+ "EveryTwoWeeks",
+ "EveryMonth",
+ "EveryTwoMonths",
+ "EveryThreeMonths",
+ "EverySixMonths",
+ "EveryYear",
 ]
 
 Rounding = Literal[
-    'Off',
-    'On',
+ "Off",
+ "On",
 ]
 
 RoundingMethod = Literal[
-    'None',
-    'RoundToNearest',
-    'RoundDown',
+ "None",
+ "RoundToNearest",
+ "RoundDown",
 ]
 
 SalesInvoiceField = Literal[
-    'Reference',
-    'IssueDate',
-    'DueDate',
-    'InvoiceTotal',
-    'BalanceDue',
-    'TaxAmount',
-    'Customer',
-    'CustomField',
+ "Reference",
+ "IssueDate",
+ "DueDate",
+ "InvoiceTotal",
+ "BalanceDue",
+ "TaxAmount",
+ "Customer",
+ "CustomField",
 ]
 
 SmtpPort = Literal[
-    '_25',
-    '_587',
+ "_25",
+ "_587",
 ]
 
 SortBy = Literal[
-    'Total',
-    'Name',
+ "Total",
+ "Name",
 ]
 
 SortOrder = Literal[
-    'Ascending',
-    'Descending',
+ "Ascending",
+ "Descending",
 ]
 
 StartingBalanceType = Literal[
-    'PaidInAdvance',
-    'AmountToPay',
+ "PaidInAdvance",
+ "AmountToPay",
 ]
 
 TaxRate = Literal[
-    'ZeroRate',
-    'TotalRate',
-    'CustomRate',
+ "ZeroRate",
+ "TotalRate",
+ "CustomRate",
 ]
 
 TaxRateType = Literal[
-    'SingleRate',
-    'MultipleRates',
+ "SingleRate",
+ "MultipleRates",
 ]
 
 TaxTransactionType = Literal[
-    'SaleOrSaleAdjustment',
-    'PurchaseOrPurchaseAdjustment',
+ "SaleOrSaleAdjustment",
+ "PurchaseOrPurchaseAdjustment",
 ]
 
 TextCustomFieldType = Literal[
-    'SingleLineText',
-    'ParagraphText',
-    'DropdownList',
+ "SingleLineText",
+ "ParagraphText",
+ "DropdownList",
 ]
 
 UserPermissionsAccessType = Literal[
-    'CustomAccess',
-    'FullAccess',
+ "CustomAccess",
+ "FullAccess",
 ]
 
 WithholdingTaxType = Literal[
-    'Rate',
-    'Amount',
+ "Rate",
+ "Amount",
 ]

@@ -13,7 +13,6 @@ setup(
         'manager_api'
     ],
     install_requires=[
-        'inflection',
         'pydantic',
         'uplink',
     ],
