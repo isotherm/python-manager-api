@@ -35,7 +35,7 @@ class Business(Session):
             base = attr.__bases__[0]
             localns = ns.copy()
             for k, v in base.__dict__.items():
-                if isclass(v) and issubclass(v, model.BaseModel):
+                if isclass(v) and issubclass(v, model.ManagerBaseModel):
                     v = type(k, (v,), {})
                     v.update_forward_refs(**ns)
                     setattr(self, k, v)

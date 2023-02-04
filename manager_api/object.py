@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 from requests import Session
 from typing import ClassVar, Optional
 from uuid import UUID
@@ -9,7 +11,26 @@ from uuid import UUID
 from pydantic import BaseModel
 
 
-class Object(BaseModel):
+class ManagerBaseModel(BaseModel):
+    @classmethod
+    def _get_value(cls, v, *args, **kwargs):
+        if isinstance(v, Object):
+            return v.Key
+        return super()._get_value(v, *args, **kwargs)
+
+    def dict(self, exclude_none=True, **kwargs):
+        return super().dict(exclude_none=exclude_none, **kwargs)
+
+    def json(self, exclude_none=True, models_as_dict=False, **kwargs):
+        return super().json(exclude_none=exclude_none, models_as_dict=models_as_dict, **kwargs)
+
+    class Config:
+        fields = {
+            "Timestamp": {"exclude": True},
+        }
+
+
+class Object(ManagerBaseModel):
     _session: ClassVar[Session]
     Key: Optional[UUID]
     Name: Optional[str]
@@ -47,6 +68,7 @@ class Object(BaseModel):
         return [self.parse_obj(r) for r in result]
 
     def create(self):
+        print(self.json())
         response = self._session.post(self.Guid, data=self.json())
         result = self._parse_response(response)
         self.Key = result["Key"]
@@ -64,15 +86,3 @@ class Object(BaseModel):
         response = self._session.delete(self._path)
         self._parse_response(response)
         self.Key = None
-
-    def json(self, exclude_none=True, **kwargs):
-        return super().json(exclude_none=exclude_none, models_as_dict=False, **kwargs)
-
-    class Config:
-        arbitrary_types_allowed = True,
-        fields = {
-            "Timestamp": {"exclude": True},
-        }
-        json_encoders = {
-            "Object": lambda v: v.Key,
-        }
