@@ -57,3 +57,8 @@ class Business(Session):
         url = urljoin(self._url, url)
         url = url.rstrip("/") + ".json"
         return super().request(method, url, **kwargs)
+
+
+__all__ = [
+    "Business",
+]

@@ -43,6 +43,22 @@ class Object(ManagerBaseModel):
     def __hash__(self):
         return hash(self.Key or self.Guid)
 
+    def __getattribute__(self, attr):
+        if attr in super().__getattribute__("__fields__"):
+            fs = super().__getattribute__("__fields_set__")
+            if fs.difference({"Name"}).issubset({"Key", "Timestamp"}) and attr not in fs:
+                self.read()
+        return super().__getattribute__(attr)
+
+    def __class_getitem__(cls, key):
+        items = [i for i in cls.list() if i.Name == key]
+        if not items:
+            raise IndexError(f"Object not found with name {key}")
+        elif len(items) != 1:
+            raise IndexError(f"More than one object found with name {key}")
+        else:
+            return items[0]
+
     @classmethod
     def validate(cls, value):
         if isinstance(value, str) or isinstance(value, UUID):
@@ -61,14 +77,16 @@ class Object(ManagerBaseModel):
         return f"{self.Guid}/{self.Key}"
 
     @classmethod
-    def list(self):
+    def list(cls):
         """List all of the objects of the given type."""
-        response = self._session.get(self.Guid)
+        response = cls._session.get(cls.Guid)
         result = response.json()
-        return [self.parse_obj(r) for r in result]
+        def _parse(r):
+            r.setdefault("Name", None)
+            return cls.parse_obj(r)
+        return [_parse(r) for r in result]
 
     def create(self):
-        print(self.json())
         response = self._session.post(self.Guid, data=self.json())
         result = self._parse_response(response)
         self.Key = result["Key"]

@@ -32,46 +32,6 @@ server URL.
 
 ## Example Usage
 
-```
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-from manager_api import Business
-
-
-# Open the business. NOTE: Always use a test business first!
-business = Business("http://localhost:55667", "apiuser", "password", "Test Business")
-
-# Retrieve the 10 most recent payments and display source account, payee, and total amount.
-payments = business.Payment.list()[:10]
-for p in payments:
-    p.read()
-    p.PaidFrom.read()
-    if p.Payee == "Customer":
-        p.Customer.read()
-        p_to = p.Customer.Name
-    elif p.Payee == "Supplier":
-        p.Supplier.read()
-        p_to = p.Supplier.Name
-    else:
-        p_to = p.Contact
-    p_amt = sum([l.Amount for l in p.Lines])
-    print(f"{p.Key} : {p_amt} : {p.PaidFrom.Name} -> {p_to}")
-
-# Create a copy of the first payment with a line item doubled.
-print("Creating new payment")
-p = payments[0]
-p.Key = None
-p.Lines[0].Amount *= 2
-p.Reference = "Test"
-p.create()
-p_amt = sum([l.Amount for l in p.Lines])
-print(f"{p.Key} : {p_amt} : {p.PaidFrom.Name} -> {p_to}")
-
-print("Updating the payment")
-p.Reference = "Updated"
-p.update()
-
-print("Deleting the payment")
-p.delete()
-```
+Refer to the included `example.py` for example usage. Running the example
+will require a business named "Test Business" and updating the URL and
+authorization details.
