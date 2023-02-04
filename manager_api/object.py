@@ -10,7 +10,7 @@ from pydantic import BaseModel
 
 
 class Object(BaseModel):
-    _session: ClassVar[Object]
+    _session: ClassVar[Session]
     Key: Optional[UUID]
     Name: Optional[str]
     Timestamp: Optional[int]

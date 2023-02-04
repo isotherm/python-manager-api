@@ -2,11 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from base64 import urlsafe_b64encode
+from inspect import isclass
 from requests import Session
 from urllib.parse import urljoin
-
-from . import model
-from .object import Object
 
 
 class Business(Session):
@@ -20,15 +18,39 @@ class Business(Session):
         self._url = url
         self._auth = (username, password)
         super().__init__()
+        # Create session-specific classes
+        from . import model
+        for name in model.__all__:
+            attr = getattr(model, name)
+            if isclass(attr):
+                attr = type(name, (attr,), {"_session": self})
+            setattr(model, name, attr)
+        # Update forward references
+        ns = {c: getattr(model, c) for c in ["Dict", "List", "Optional"]}
+        ns["model"] = model
+        for name in model.__all__:
+            attr = getattr(model, name)
+            if not isclass(attr):
+                continue
+            base = attr.__bases__[0]
+            localns = ns.copy()
+            for k, v in base.__dict__.items():
+                if isclass(v) and issubclass(v, model.BaseModel):
+                    v = type(k, (v,), {})
+                    v.update_forward_refs(**ns)
+                    setattr(self, k, v)
+                    localns[k] = v
+            attr.update_forward_refs(**localns)
         # Populate classes of available endpoints
         request = self.get("")
         for item in request.json():
             name = item["Name"]
-            base = getattr(model, name)
-            if not hasattr(base, "Guid") or base.Guid != item["Key"]:
+            try:
+                base = getattr(model, name)
+                assert(base.Guid == item["Key"])
+                setattr(self, name, base)
+            except (AssertionError, AttributeError):
                 continue
-            cls = type(name, (base,), {"_session": self})
-            setattr(self, name, cls)
 
     def request(self, method, url, **kwargs):
         kwargs["auth"] = self._auth
