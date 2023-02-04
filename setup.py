@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='manager-api',
-    description='Publishes your Lektor site to Google App Engine.',
+    description='Python module to access the API provided by Manager accounting software ',
     url='https://github.com/isotherm/python-manager-api/',
     version='0.1',
     author=u'Kirk Meyer',
@@ -13,8 +13,7 @@ setup(
         'manager_api'
     ],
     install_requires=[
-        'pydantic',
-        'uplink',
+        'pydantic==1.10.4',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
