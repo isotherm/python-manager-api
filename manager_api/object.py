@@ -43,6 +43,9 @@ class Object(ManagerBaseModel):
     def __hash__(self):
         return hash(self.Key or self.Guid)
 
+    def __eq__(self, other):
+        return self.Key == other.Key
+
     def __getattribute__(self, attr):
         if attr in super().__getattribute__("__fields__"):
             fs = super().__getattribute__("__fields_set__")
