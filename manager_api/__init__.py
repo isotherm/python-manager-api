@@ -38,7 +38,7 @@ class Business(Session):
                 if isclass(v) and issubclass(v, model.ManagerBaseModel):
                     v = type(k, (v,), {})
                     v.update_forward_refs(**ns)
-                    setattr(self, k, v)
+                    setattr(base, k, v)
                     localns[k] = v
             attr.update_forward_refs(**localns)
         # Populate classes of available endpoints
