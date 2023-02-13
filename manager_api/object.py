@@ -54,11 +54,11 @@ class Object(ManagerBaseModel):
         return super().__getattribute__(attr)
 
     def __class_getitem__(cls, key):
-        items = [i for i in cls.list() if i.Name == key]
+        items = [i for i in cls.list() if key == i.Name.split(" - ", 1)[0]]
         if not items:
-            raise IndexError(f"Object not found with name {key}")
+            raise KeyError(f"Object not found with name {key}")
         elif len(items) != 1:
-            raise IndexError(f"More than one object found with name {key}")
+            raise KeyError(f"More than one object found with name {key}")
         else:
             return items[0]
 
