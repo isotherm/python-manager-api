@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 
 from requests import Session
-from typing import ClassVar, Optional
+from typing import ClassVar, Dict, Optional
 from uuid import UUID
 
 from pydantic import BaseModel
@@ -16,6 +16,12 @@ class ManagerBaseModel(BaseModel):
     def _get_value(cls, v, *args, **kwargs):
         if isinstance(v, Object):
             return v.Key
+        elif isinstance(v, Dict):
+            # JSON dictionary keys must be strings
+            for k in list(v.keys()):
+                if isinstance(k, Object):
+                    v[str(k.Key)] = v[k]
+                    del v[k]
         return super()._get_value(v, *args, **kwargs)
 
     def dict(self, exclude_none=True, **kwargs):
