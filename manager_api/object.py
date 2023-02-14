@@ -52,12 +52,19 @@ class Object(ManagerBaseModel):
     def __eq__(self, other):
         return self.Key == other.Key
 
-    def __getattribute__(self, attr):
+    def _read_if_necessary(self, attr):
         if attr in super().__getattribute__("__fields__"):
             fs = super().__getattribute__("__fields_set__")
             if fs.difference({"Name"}).issubset({"Key", "Timestamp"}) and attr not in fs:
                 self.read()
+
+    def __getattribute__(self, attr):
+        super().__getattribute__("_read_if_necessary")(attr)
         return super().__getattribute__(attr)
+
+    def __setattr__(self, attr, value):
+        super().__getattribute__("_read_if_necessary")(attr)
+        super().__setattr__(attr, value)
 
     def __class_getitem__(cls, key):
         items = [i for i in cls.list() if key == i.Name.split(" - ", 1)[0]]
