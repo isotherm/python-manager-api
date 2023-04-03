@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Do not edit. Automatically generated from Manager v23.1.11.592.
+# Do not edit. Automatically generated from Manager v23.4.3.750.
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from .enums import *
 from .object import ManagerBaseModel, Object
 
 
-CustomFieldsAttribute = Union["model.AmortizationEntry", "model.BankOrCashAccount", "model.BillableTime", "model.BusinessDetails", "model.CapitalAccount", "model.CreditNote", "model.Customer", "model.DebitNote", "model.DeliveryNote", "model.DepreciationEntry", "model.Employee", "model.ExpenseClaim", "model.FixedAsset", "model.Folder", "model.GoodsReceipt", "model.IntangibleAsset", "model.InterAccountTransfer", "model.InventoryItem", "model.InventoryKit", "model.InventoryTransfer", "model.InventoryWriteOff", "model.JournalEntry", "model.NonInventoryItem", "model.Payment", "model.Payslip", "model.PayslipContributionItem", "model.PayslipDeductionItem", "model.PayslipEarningsItem", "model.ProductionOrder", "model.Project", "model.PurchaseInvoice", "model.PurchaseOrder", "model.PurchaseQuote", "model.Receipt", "model.RecurringInterAccountTransfer", "model.RecurringJournalEntry", "model.RecurringPayment", "model.RecurringPayslip", "model.RecurringPurchaseInvoice", "model.RecurringPurchaseOrder", "model.RecurringReceipt", "model.RecurringSalesInvoice", "model.RecurringSalesOrder", "model.RecurringSalesQuote", "model.SalesInvoice", "model.SalesOrder", "model.SalesQuote", "model.SpecialAccount", "model.Supplier", "model.TaxCode", "model.WithholdingTaxReceipt"]
+CustomFieldsAttribute = Union["model.AmortizationEntry", "model.BankOrCashAccount", "model.BillableTime", "model.BusinessDetails", "model.CapitalAccount", "model.CreditNote", "model.Customer", "model.DebitNote", "model.DeliveryNote", "model.DepreciationEntry", "model.Employee", "model.ExpenseClaim", "model.FixedAsset", "model.Folder", "model.GoodsReceipt", "model.IntangibleAsset", "model.InterAccountTransfer", "model.InventoryItem", "model.InventoryKit", "model.InventoryTransfer", "model.InventoryWriteOff", "model.Investment", "model.JournalEntry", "model.NonInventoryItem", "model.Payment", "model.Payslip", "model.PayslipContributionItem", "model.PayslipDeductionItem", "model.PayslipEarningsItem", "model.ProductionOrder", "model.Project", "model.PurchaseInvoice", "model.PurchaseOrder", "model.PurchaseQuote", "model.Receipt", "model.RecurringInterAccountTransfer", "model.RecurringJournalEntry", "model.RecurringPayment", "model.RecurringPayslip", "model.RecurringPurchaseInvoice", "model.RecurringPurchaseOrder", "model.RecurringReceipt", "model.RecurringSalesInvoice", "model.RecurringSalesOrder", "model.RecurringSalesQuote", "model.SalesInvoice", "model.SalesOrder", "model.SalesQuote", "model.SpecialAccount", "model.Supplier", "model.TaxCode", "model.WithholdingTaxReceipt"]
 BalanceSheetAbstractGroup = Union["model.Assets", "model.BalanceSheetGroup", "model.Equity", "model.Liabilities"]
 ChartOfAccountsGroup = Union["model.BalanceSheetAbstractGroup", "model.ProfitAndLossStatementGroup"]
 IGeneralLedgerAccount = Union["model.BalanceSheetAccount", "model.BalanceSheetAccountsPayableAccount", "model.BalanceSheetAccountsReceivableAccount", "model.BalanceSheetBillableExpensesAccount", "model.BalanceSheetBillableTimeAccount", "model.BalanceSheetCapitalAccountsAccount", "model.BalanceSheetCashAtBankAccount", "model.BalanceSheetEmployeeClearingAccount", "model.BalanceSheetExpenseClaimsAccount", "model.BalanceSheetFixedAssetsAccumulatedDepreciationAccount", "model.BalanceSheetFixedAssetsAtCostAccount", "model.BalanceSheetIntangibleAssetsAccumulatedAmortizationAccount", "model.BalanceSheetIntangibleAssetsAtCostAccount", "model.BalanceSheetInterdivisionalLoan", "model.BalanceSheetInventoryOnHandAccount", "model.BalanceSheetInvestmentsAccount", "model.BalanceSheetProductionInProgressAccount", "model.BalanceSheetRetainedEarningsAccount", "model.BalanceSheetSpecialAccountsAccount", "model.BalanceSheetSuspenseAccount", "model.BalanceSheetTaxPayableAccount", "model.BalanceSheetWithholdingTaxAccount", "model.BalanceSheetWithholdingTaxPayableAccount", "model.BalanceSheetWithholdingTaxReceivableAccount", "model.ControlAccountForBankAccounts", "model.ControlAccountForCapitalAccounts", "model.ControlAccountForCustomers", "model.ControlAccountForEmployees", "model.ControlAccountForFixedAssets", "model.ControlAccountForFixedAssetsAccumulatedDepreciation", "model.ControlAccountForIntangibleAssets", "model.ControlAccountForIntangibleAssetsAccumulatedAmortization", "model.ControlAccountForInventoryItems", "model.ControlAccountForInvestments", "model.ControlAccountForSpecialAccounts", "model.ControlAccountForSuppliers", "model.ProfitAndLossStatementAccount", "model.ProfitAndLossStatementAccountBillableExpensesCost", "model.ProfitAndLossStatementAccountBillableExpensesInvoiced", "model.ProfitAndLossStatementAccountBillableTimeInvoiced", "model.ProfitAndLossStatementAccountBillableTimeMovement", "model.ProfitAndLossStatementAccountCurrencyGainsLosses", "model.ProfitAndLossStatementAccountFixedAssetDepreciation", "model.ProfitAndLossStatementAccountFixedAssetLossOnDisposal", "model.ProfitAndLossStatementAccountIntangibleAssetsAmortization", "model.ProfitAndLossStatementAccountIntangibleAssetsGainsLossOnDisposal", "model.ProfitAndLossStatementAccountInventoryPurchases", "model.ProfitAndLossStatementAccountInventorySales", "model.ProfitAndLossStatementAccountLatePaymentFees", "model.ProfitAndLossStatementAccountRoundingExpense", "model.ProfitAndLossStatementCapitalGainsOnInvestments"]
@@ -26,7 +26,6 @@ ISalesInvoiceAccount = Union["model.BalanceSheetAccount", "model.BalanceSheetCap
 IBankOrCashAccount = Union["model.BankOrCashAccount"]
 IReportingCategory = Union["model.BusinessDetailsNameField", "model.CheckboxCustomField", "model.CustomField", "model.DateCustomField", "model.EmployeeEmailField", "model.EmployeeNameField", "model.HideIfEmptyReportingCategory", "model.MultipleValueCustomField", "model.NumberCustomField", "model.PayslipContributionItemReportingCategory", "model.PayslipDeductionItemReportingCategory", "model.PayslipEarningsItemReportingCategory", "model.ReportTranformationFromDate", "model.ReportTranformationToDate", "model.ReportTransformationFromDateLastJuly", "model.ReportTransformationLabel", "model.ReportTransformationNetAmounts", "model.ReportTransformationTaxAmounts", "model.ReportTransformationTaxPurchases", "model.ReportTransformationTaxSales", "model.ReverseSignReportingCategory", "model.RoundDownReportingCategory", "model.SetZeroIfNegativeReportingCategory", "model.SupplierNameField", "model.TaxAmountReportingCategory", "model.TaxAmountReversedReportingCategory", "model.TaxCodeReportingCategory", "model.TaxCodeReversedReportingCategory", "model.TextCustomField"]
 IExpenseClaimPayer = Union["model.CapitalAccount", "model.Employee", "model.ExpenseClaimsPayer"]
-ICustomField = Union["model.CheckboxCustomField", "model.DateCustomField", "model.MultipleValueCustomField", "model.NumberCustomField", "model.TextCustomField"]
 IPurchaseItem = Union["model.FreightInItem", "model.InventoryItem", "model.NonInventoryItem"]
 ISaleItem = Union["model.InventoryItem", "model.InventoryKit", "model.NonInventoryItem"]
 IProfitAndLossAccount = Union["model.ProfitAndLossStatementAccount", "model.ProfitAndLossStatementAccountBillableExpensesCost", "model.ProfitAndLossStatementAccountBillableExpensesInvoiced", "model.ProfitAndLossStatementAccountBillableTimeInvoiced", "model.ProfitAndLossStatementAccountBillableTimeMovement", "model.ProfitAndLossStatementAccountCurrencyGainsLosses", "model.ProfitAndLossStatementAccountFixedAssetDepreciation", "model.ProfitAndLossStatementAccountFixedAssetLossOnDisposal", "model.ProfitAndLossStatementAccountIntangibleAssetsAmortization", "model.ProfitAndLossStatementAccountIntangibleAssetsGainsLossOnDisposal", "model.ProfitAndLossStatementAccountInventoryPurchases", "model.ProfitAndLossStatementAccountInventorySales", "model.ProfitAndLossStatementAccountLatePaymentFees", "model.ProfitAndLossStatementAccountRoundingExpense", "model.ProfitAndLossStatementCapitalGainsOnInvestments"]
@@ -481,14 +480,10 @@ class CheckboxCustomField(Object):
     Position: Optional[int]
     Placement: Optional[List[model.CustomFieldsAttribute]]
     Description: Optional[str]
-    DisplayOnList: Optional[bool]
     DisplayOnView: Optional[bool]
     ShowAtTheTop: Optional[bool]
     Inactive: Optional[bool]
-
-
-class Column(Object):
-    pass
+    ContainsGeneralLedgerTransactions: Optional[bool]
 
 
 class ControlAccountForBankAccounts(Object):
@@ -661,6 +656,14 @@ class CreditNoteFooter(Object):
     Inactive: Optional[bool]
 
 
+class CustomColumns(Object):
+    Guid: ClassVar[UUID] = "3c2d2934-27a8-4df3-9afd-890ebeb6fb4e"
+    class CustomColumn(ManagerBaseModel):
+        Key: Optional[model.UUID]
+        Enabled: Optional[bool]
+    Columns: Optional[List[CustomColumn]]
+
+
 class CustomField(Object):
     Guid: ClassVar[UUID] = "dcb382dc-a4e0-4354-a845-b7d647f610f7"
     Name: Optional[str]
@@ -670,7 +673,6 @@ class CustomField(Object):
     OptionsForDropdownList: Optional[str]
     Size: Optional[model.CustomFieldSize]
     Description: Optional[str]
-    DisplayOnList: Optional[bool]
     DisplayOnView: Optional[bool]
     ShowAtTheTop: Optional[bool]
     Inactive: Optional[bool]
@@ -802,10 +804,10 @@ class DateCustomField(Object):
     Position: Optional[int]
     Placement: Optional[List[model.CustomFieldsAttribute]]
     Description: Optional[str]
-    DisplayOnList: Optional[bool]
     DisplayOnView: Optional[bool]
     ShowAtTheTop: Optional[bool]
     Inactive: Optional[bool]
+    ContainsGeneralLedgerTransactions: Optional[bool]
 
 
 class DebitNote(Object):
@@ -881,7 +883,7 @@ class DeliveryNote(Object):
     Description: Optional[str]
     Lines: Optional[List[Line]]
     HasLineNumber: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasDeliveryNoteCustomTitle: Optional[bool]
     DeliveryNoteCustomTitle: Optional[str]
     HasDeliveryNoteCustomTheme: Optional[bool]
     DeliveryNoteCustomTheme: Optional[model.Theme]
@@ -890,16 +892,6 @@ class DeliveryNote(Object):
     CustomFields: Optional[Dict[model.CustomField, str]]
     CustomFields2: Optional[model.CustomFields]
     AutomaticReference: Optional[bool]
-
-
-class DeliveryNoteColumns(Object):
-    Guid: ClassVar[UUID] = "8e82c77b-b894-4df8-939d-9c6983eb58d4"
-    class Column(ManagerBaseModel):
-        Name: Optional[enums.DeliveryNoteColumns]
-        CustomField: Optional[model.ICustomField]
-        ClassicCustomField: Optional[model.CustomField]
-    CustomColumns: Optional[bool]
-    Columns: Optional[List[Column]]
 
 
 class DeliveryNoteFooter(Object):
@@ -1505,11 +1497,14 @@ class Investment(Object):
     Guid: ClassVar[UUID] = "a8f95068-fc73-43f7-aabb-fd868e506b51"
     Code: Optional[str]
     Name: Optional[str]
+    Currency: Optional[model.ForeignCurrency]
     ControlAccount: Optional[model.ControlAccountForInvestments]
     MarketPrice: Optional[model.Decimal]
     StartingBalance: Optional[model.Decimal]
     StartingBalanceTotalCost: Optional[model.Decimal]
     Inactive: Optional[bool]
+    CustomFields: Optional[Dict[model.CustomField, str]]
+    CustomFields2: Optional[model.CustomFields]
 
 
 class JournalEntry(Object):
@@ -1534,6 +1529,8 @@ class JournalEntry(Object):
         ExpenseClaimPayer: Optional[model.ExpenseClaimsPayer]
         Investment: Optional[model.Investment]
         LineDescription: Optional[str]
+        CustomFields: Optional[Dict[model.CustomField, str]]
+        CustomFields2: Optional[model.CustomFields]
         Qty: Optional[model.Decimal]
         Debit: Optional[model.Decimal]
         Credit: Optional[model.Decimal]
@@ -1597,10 +1594,10 @@ class MultipleValueCustomField(Object):
     Placement: Optional[List[model.CustomFieldsAttribute]]
     Options: Optional[List[Option]]
     Description: Optional[str]
-    DisplayOnList: Optional[bool]
     DisplayOnView: Optional[bool]
     ShowAtTheTop: Optional[bool]
     Inactive: Optional[bool]
+    ContainsGeneralLedgerTransactions: Optional[bool]
 
 
 class NamedObject(Object):
@@ -1637,11 +1634,11 @@ class NumberCustomField(Object):
     Position: Optional[int]
     Placement: Optional[List[model.CustomFieldsAttribute]]
     Description: Optional[str]
-    DisplayOnList: Optional[bool]
     DisplayOnView: Optional[bool]
     ShowAtTheTop: Optional[bool]
     HideTotalAmount: Optional[bool]
     Inactive: Optional[bool]
+    ContainsGeneralLedgerTransactions: Optional[bool]
 
 
 class Object(Object):
@@ -1704,7 +1701,7 @@ class Payment(Object):
     CustomTheme: Optional[bool]
     PaymentCustomTheme: Optional[model.Theme]
     AutomaticReference: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasPaymentCustomTitle: Optional[bool]
     PaymentCustomTitle: Optional[str]
     ShowTaxAmountColumn: Optional[bool]
     HasPaymentFooters: Optional[bool]
@@ -1801,6 +1798,7 @@ class PayslipContributionItem(Object):
     ExpenseAccount: Optional[model.ProfitAndLossStatementAccount]
     LiabilityAccount: Optional[model.BalanceSheetAccount]
     ReportingCategory: Optional[model.PayslipContributionItemReportingCategory]
+    Inactive: Optional[bool]
     CustomFields: Optional[Dict[model.CustomField, str]]
     CustomFields2: Optional[model.CustomFields]
 
@@ -1816,6 +1814,7 @@ class PayslipDeductionItem(Object):
     Name: Optional[str]
     Account: Optional[model.ICustomGeneralLedgerAccount]
     ReportingCategory: Optional[model.PayslipDeductionItemReportingCategory]
+    Inactive: Optional[bool]
     CustomFields: Optional[Dict[model.CustomField, str]]
     CustomFields2: Optional[model.CustomFields]
 
@@ -1831,6 +1830,7 @@ class PayslipEarningsItem(Object):
     Name: Optional[str]
     ExpenseAccount: Optional[model.ProfitAndLossStatementAccount]
     ReportingCategory: Optional[model.PayslipEarningsItemReportingCategory]
+    Inactive: Optional[bool]
     CustomFields: Optional[Dict[model.CustomField, str]]
     CustomFields2: Optional[model.CustomFields]
 
@@ -2214,7 +2214,7 @@ class PurchaseQuote(Object):
     PurchaseQuoteCustomTheme: Optional[model.Theme]
     AutomaticReference: Optional[bool]
     Cancelled: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasPurchaseQuoteCustomTitle: Optional[bool]
     PurchaseQuoteCustomTitle: Optional[str]
     RequestForQuotationCustomTitleOption: Optional[bool]
     RequestForQuotationCustomTitle: Optional[str]
@@ -2288,18 +2288,13 @@ class Receipt(Object):
     CustomTheme: Optional[bool]
     ReceiptCustomTheme: Optional[model.Theme]
     AutomaticReference: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasReceiptCustomTitle: Optional[bool]
     ReceiptCustomTitle: Optional[str]
     ShowTaxAmountColumn: Optional[bool]
     HasReceiptFooters: Optional[bool]
     ReceiptFooters: Optional[List[model.ReceiptFooter]]
     CustomFields: Optional[Dict[model.CustomField, str]]
     CustomFields2: Optional[model.CustomFields]
-
-
-class ReceiptColumns(Object):
-    Guid: ClassVar[UUID] = "ab9df426-967c-4851-92e8-d45e3188fc9c"
-    Columns: Optional[List[model.Column]]
 
 
 class ReceiptFooter(Object):
@@ -2432,7 +2427,7 @@ class RecurringPayment(Object):
     DiscountType: Optional[model.DiscountType]
     AmountsAreTaxExclusive: Optional[bool]
     AutomaticReference: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasPaymentCustomTitle: Optional[bool]
     PaymentCustomTitle: Optional[str]
     ShowTaxAmountColumn: Optional[bool]
     HasPaymentFooters: Optional[bool]
@@ -2460,7 +2455,6 @@ class RecurringPayslip(Object):
     AutomaticReference: Optional[bool]
     CustomFields: Optional[Dict[model.CustomField, str]]
     CustomFields2: Optional[model.CustomFields]
-    NextIssueDate: Optional[model.date]
 
 
 class RecurringPurchaseInvoice(Object):
@@ -2547,7 +2541,7 @@ class RecurringReceipt(Object):
     DiscountType: Optional[model.DiscountType]
     AmountsAreTaxExclusive: Optional[bool]
     AutomaticReference: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasReceiptCustomTitle: Optional[bool]
     ReceiptCustomTitle: Optional[str]
     ShowTaxAmountColumn: Optional[bool]
     HasReceiptFooters: Optional[bool]
@@ -2588,7 +2582,7 @@ class RecurringSalesInvoice(Object):
     EarlyPaymentDiscountDays: Optional[int]
     LatePaymentFees: Optional[bool]
     LatePaymentFeesPercentage: Optional[model.Decimal]
-    CustomTitle: Optional[bool]
+    HasSalesInvoiceCustomTitle: Optional[bool]
     SalesInvoiceCustomTitle: Optional[str]
     TotalAmountInWords: Optional[bool]
     HideDueDate: Optional[bool]
@@ -2623,7 +2617,7 @@ class RecurringSalesOrder(Object):
     HasSalesOrderCustomTheme: Optional[bool]
     SalesOrderCustomTheme: Optional[model.Theme]
     ShowTaxAmountColumn: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasSalesOrderCustomTitle: Optional[bool]
     SalesOrderCustomTitle: Optional[str]
     HasSalesOrderFooters: Optional[bool]
     SalesOrderFooters: Optional[List[model.SalesOrderFooter]]
@@ -2657,7 +2651,7 @@ class RecurringSalesQuote(Object):
     HideTotalAmount: Optional[bool]
     HasSalesQuoteCustomTheme: Optional[bool]
     SalesQuoteCustomTheme: Optional[model.Theme]
-    CustomTitle: Optional[bool]
+    HasSalesQuoteCustomTitle: Optional[bool]
     SalesQuoteCustomTitle: Optional[str]
     ShowTaxAmountColumn: Optional[bool]
     HasSalesQuoteFooters: Optional[bool]
@@ -2806,7 +2800,7 @@ class SalesInvoice(Object):
     TotalAmountInWords: Optional[bool]
     TotalAmountInBaseCurrency: Optional[bool]
     Bilingual: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasSalesInvoiceCustomTitle: Optional[bool]
     SalesInvoiceCustomTitle: Optional[str]
     HasSalesInvoiceCustomTheme: Optional[bool]
     SalesInvoiceCustomTheme: Optional[model.Theme]
@@ -2892,7 +2886,7 @@ class SalesOrder(Object):
     SalesOrderCustomTheme: Optional[model.Theme]
     ShowItemImages: Optional[bool]
     ShowTaxAmountColumn: Optional[bool]
-    CustomTitle: Optional[bool]
+    HasSalesOrderCustomTitle: Optional[bool]
     SalesOrderCustomTitle: Optional[str]
     HasSalesOrderFooters: Optional[bool]
     SalesOrderFooters: Optional[List[model.SalesOrderFooter]]
@@ -2941,7 +2935,7 @@ class SalesQuote(Object):
     HideTotalAmount: Optional[bool]
     HasSalesQuoteCustomTheme: Optional[bool]
     SalesQuoteCustomTheme: Optional[model.Theme]
-    CustomTitle: Optional[bool]
+    HasSalesQuoteCustomTitle: Optional[bool]
     SalesQuoteCustomTitle: Optional[str]
     ShowItemImages: Optional[bool]
     ShowTaxAmountColumn: Optional[bool]
@@ -3226,10 +3220,10 @@ class TextCustomField(Object):
     OptionsForDropdownList: Optional[str]
     Size: Optional[model.CustomFieldSize]
     Description: Optional[str]
-    DisplayOnList: Optional[bool]
     DisplayOnView: Optional[bool]
     ShowAtTheTop: Optional[bool]
     Inactive: Optional[bool]
+    ContainsGeneralLedgerTransactions: Optional[bool]
 
 
 class Theme(Object):
@@ -3336,7 +3330,6 @@ __all__ = [
     "CashFlowStatementOperatingActivityGroup",
     "ChartOfAccountsGroup",
     "CheckboxCustomField",
-    "Column",
     "ControlAccountForBankAccounts",
     "ControlAccountForCapitalAccounts",
     "ControlAccountForCustomers",
@@ -3351,6 +3344,7 @@ __all__ = [
     "ControlAccountForSuppliers",
     "CreditNote",
     "CreditNoteFooter",
+    "CustomColumns",
     "CustomField",
     "CustomFields",
     "CustomReport",
@@ -3364,7 +3358,6 @@ __all__ = [
     "DebitNote",
     "DebitNoteFooter",
     "DeliveryNote",
-    "DeliveryNoteColumns",
     "DeliveryNoteFooter",
     "DepreciationCalculationWorksheet",
     "DepreciationEntry",
@@ -3474,7 +3467,6 @@ __all__ = [
     "PurchaseQuote",
     "PurchaseQuoteFooter",
     "Receipt",
-    "ReceiptColumns",
     "ReceiptFooter",
     "ReceiptRule",
     "ReceiptsAndPaymentsSummary",

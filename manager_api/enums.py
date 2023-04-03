@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Do not edit. Automatically generated from Manager v23.1.11.592.
+# Do not edit. Automatically generated from Manager v23.4.3.750.
 
 from typing import Literal
 
