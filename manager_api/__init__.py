@@ -15,11 +15,10 @@ def _b64encode(string):
 
 class Business(Session):
     def __init__(self, url, username, password, name):
-        # Calculate API URL for this business
-        name = _b64encode(name)
-        url = urljoin(url, f"api/{name}/")
         # Initialize persistent options
         self._url = url
+        self._name = name
+        self._api_url = urljoin(url, f"api/{_b64encode(name)}/")
         self._auth = (username, password)
         super().__init__()
         # Create session-specific classes
@@ -58,7 +57,7 @@ class Business(Session):
 
     def request(self, method, url, **kwargs):
         kwargs["auth"] = self._auth
-        url = urljoin(self._url, url)
+        url = urljoin(self._api_url, url)
         url = url.rstrip("/") + ".json"
         return super().request(method, url, **kwargs)
 
