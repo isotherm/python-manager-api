@@ -7,12 +7,16 @@ from requests import Session
 from urllib.parse import urljoin
 
 
+def _b64encode(string):
+    if hasattr(string, "encode"):
+        string = string.encode()
+    return urlsafe_b64encode(string).decode().rstrip("=")
+
+
 class Business(Session):
     def __init__(self, url, username, password, name):
         # Calculate API URL for this business
-        name = bytes(name, encoding="utf-8")
-        name = urlsafe_b64encode(name).decode("utf-8")
-        name = name.rstrip("=")
+        name = _b64encode(name)
         url = urljoin(url, f"api/{name}/")
         # Initialize persistent options
         self._url = url
