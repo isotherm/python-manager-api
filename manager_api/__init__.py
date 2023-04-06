@@ -3,6 +3,7 @@
 
 from base64 import urlsafe_b64encode
 from inspect import isclass
+import re
 from requests import Session
 from urllib.parse import urljoin
 
@@ -60,6 +61,17 @@ class Business(Session):
         url = urljoin(self._api_url, url)
         url = url.rstrip("/") + ".json"
         return super().request(method, url, **kwargs)
+
+    def _get_url(self, action, uuid=None):
+        action = re.sub(r'(?<!^)(?=[A-Z])', '-', action).lower()
+        name = self._name.encode()
+        protobuf = b"\xa2\x06" + bytes([len(name)]) + name
+        if uuid:
+            protobuf += b"\xc2\x0c\x12"
+            protobuf += b"\x09" + uuid.bytes_le[:8]
+            protobuf += b"\x11" + uuid.bytes_le[8:]
+        protobuf = _b64encode(protobuf)
+        return urljoin(self._url, f"{action}?{protobuf}")
 
 
 __all__ = [

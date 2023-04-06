@@ -105,7 +105,7 @@ class Object(ManagerBaseModel):
     def create(self):
         response = self._session.post(self.Guid, data=self.json())
         result = self._parse_response(response)
-        self.Key = result["Key"]
+        self.Key = UUID(result["Key"])
 
     def read(self):
         result = self._session.get(self._path).json()
@@ -120,3 +120,6 @@ class Object(ManagerBaseModel):
         response = self._session.delete(self._path)
         self._parse_response(response)
         self.Key = None
+
+    def get_url(self):
+        return self._session._get_url(f"{type(self).__name__}View", self.Key)

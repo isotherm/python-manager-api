@@ -28,6 +28,7 @@ pmt.Reference = "Test"
 pmt.create()
 pmt_amt = sum([ln.Amount for ln in pmt.Lines])
 print(f"{pmt.Key} : {pmt_amt} : {pmt.PaidFrom.Name}")
+print(pmt.get_url())
 input("Press Enter to continue...")
 
 print("Updating the payment")
