@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-
 from requests import Session
 from typing import ClassVar, Dict, Optional
 from uuid import UUID
