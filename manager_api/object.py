@@ -66,7 +66,7 @@ class Object(ManagerBaseModel):
         super().__setattr__(attr, value)
 
     def __class_getitem__(cls, key):
-        items = [i for i in cls.list() if key == i.Name.split(" - ", 1)[0]]
+        items = [i for i in cls.list() if key == i.Name.split(" - ", 1)[0].split(" — ", 1)[0]]
         if not items:
             raise KeyError(f"Object not found with name {key}")
         elif len(items) != 1:
