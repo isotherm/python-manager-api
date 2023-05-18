@@ -49,7 +49,10 @@ class Object(ManagerBaseModel):
         return hash(self.Key or self.Guid)
 
     def __eq__(self, other):
-        return self.Key == other.Key
+        try:
+            return self.Key == other.Key
+        except AttributeError:
+            return False
 
     def _read_if_necessary(self, attr):
         if attr in super().__getattribute__("__fields__"):
@@ -66,7 +69,7 @@ class Object(ManagerBaseModel):
         super().__setattr__(attr, value)
 
     def __class_getitem__(cls, key):
-        items = [i for i in cls.list() if key == i.Name.split(" - ", 1)[0].split(" — ", 1)[0]]
+        items = [i for i in cls.list() if key == (i.Name or "").split(" - ", 1)[0].split(" — ", 1)[0]]
         if not items:
             raise KeyError(f"Object not found with name {key}")
         elif len(items) != 1:
