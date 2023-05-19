@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import mimetypes
+import os
 from requests import Session
 from typing import ClassVar, Dict, Optional
 from uuid import UUID
@@ -125,3 +127,13 @@ class Object(ManagerBaseModel):
 
     def get_url(self):
         return self._session._get_url(f"{type(self).__name__}View", self.Key)
+
+    def attach_file(self, filename):
+        url = self._session._get_url("NewAttachment", self.Key, b"\x0a")
+        headers = {
+            "Content-Type": "application/octet-stream",
+            "X-File-Name": os.path.basename(filename),
+            "X-File-Type": mimetypes.guess_type(filename)[0],
+        }
+        with open(filename, "rb") as fp:
+            self._session.post(url, data=fp.read(), headers=headers)
