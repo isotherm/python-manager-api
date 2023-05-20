@@ -125,8 +125,8 @@ class Object(ManagerBaseModel):
         self._parse_response(response)
         self.Key = None
 
-    def get_url(self):
-        return self._session._get_url(f"{type(self).__name__}View", self.Key)
+    def get_url(self, action="View"):
+        return self._session._get_url(f"{type(self).__name__}{action}", self.Key)
 
     def attach_file(self, filename):
         url = self._session._get_url("NewAttachment", self.Key, b"\x0a")
