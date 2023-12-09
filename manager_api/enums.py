@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Do not edit. Automatically generated from Manager v23.4.3.750.
+# Do not edit. Automatically generated from Manager v23.12.9.1219.
 
 from typing import Literal
 
@@ -82,6 +82,11 @@ AmountType = Literal[
  "Exactly",
  "MoreThan",
  "LessThan",
+]
+
+AutomaticManual = Literal[
+ "Automatic",
+ "Manual",
 ]
 
 BalanceSheetLayout = Literal[
@@ -352,6 +357,7 @@ SalesInvoiceField = Literal[
 
 SmtpPort = Literal[
  "_25",
+ "_465",
  "_587",
 ]
 

@@ -4,7 +4,7 @@ setup(
     name='manager-api',
     description='Python module to access the API provided by Manager accounting software ',
     url='https://github.com/isotherm/python-manager-api/',
-    version='0.1.3',
+    version='0.1.4',
     author=u'Kirk Meyer',
     author_email='kirk.meyer@alpaxo.com',
     license='MIT',
