@@ -13,7 +13,7 @@ setup(
         'manager_api'
     ],
     install_requires=[
-        'pydantic==1.10.4',
+        'pydantic==1.10.20',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
