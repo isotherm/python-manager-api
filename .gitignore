@@ -1,3 +1,4 @@
+build/
 dist/
 manager_api.egg-info/
 **/__pycache__/
