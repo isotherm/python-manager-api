@@ -1,8 +1,20 @@
 # -*- coding: utf-8 -*-
-# Do not edit. Automatically generated from Manager v23.12.9.1219.
+# Do not edit. Automatically generated from Manager v26.2.20.3187.
 
 from typing import Literal
 
+
+NumberOperator = Literal[
+ "IsLessThan",
+ "IsMoreThan",
+ "IsNotZero",
+ "IsZero",
+]
+
+EnumOperator = Literal[
+ "Is",
+ "IsNot",
+]
 
 StringOperator = Literal[
  "Contains",
@@ -18,13 +30,17 @@ DecimalOperator = Literal[
  "IsZero",
 ]
 
+DateOperator = Literal[
+ "IsExactly",
+ "IsAfter",
+ "IsOnOrAfter",
+ "IsBefore",
+ "IsBeforeOrOn",
+]
+
 BooleanOperator = Literal[
  "IsChecked",
  "IsNotChecked",
-]
-
-DateOperator = Literal[
- "IsBetween",
 ]
 
 ObjectOperator = Literal[
@@ -82,11 +98,6 @@ AmountType = Literal[
  "Exactly",
  "MoreThan",
  "LessThan",
-]
-
-AutomaticManual = Literal[
- "Automatic",
- "Manual",
 ]
 
 BalanceSheetLayout = Literal[
@@ -281,10 +292,31 @@ ExpirationType = Literal[
  "Custom",
 ]
 
+ExtensionSource = Literal[
+ "Url",
+ "Inline",
+]
+
 FirstDayOfWeek = Literal[
  "Monday",
  "Sunday",
  "Saturday",
+]
+
+FixedAssetStartingBalanceType = Literal[
+ "AcquisitionCost",
+ "AccumulatedDepreciation",
+]
+
+IntangibleAssetStartingBalanceType = Literal[
+ "AcquisitionCost",
+ "AccumulatedAmortization",
+]
+
+InventoryItemStartingBalanceType = Literal[
+ "QtyOnHand",
+ "QtyToDeliver",
+ "QtyToReceive",
 ]
 
 InventoryLocationType = Literal[
@@ -293,9 +325,25 @@ InventoryLocationType = Literal[
  "Supplier",
 ]
 
+InventoryValuationMethod = Literal[
+ "FirstInFirstOut",
+ "WeightedAverageCost",
+ "Manual",
+]
+
+InventoryValuationMethodWithoutManual = Literal[
+ "FirstInFirstOut",
+ "WeightedAverageCost",
+]
+
 LatePaymentFeesType = Literal[
  "DoNotCharge",
  "ChargeMonthly",
+]
+
+MonthDay = Literal[
+ "OnTheSameDay",
+ "OnTheLastDay",
 ]
 
 PageSize = Literal[
@@ -319,6 +367,11 @@ ProfitAndLossStatementGroupType = Literal[
  "IncomeGroup",
  "ExpenseGroup",
  "SubgroupOf",
+]
+
+Protocol = Literal[
+ "HTTP",
+ "SMTP",
 ]
 
 Repeat = Literal[
@@ -371,6 +424,20 @@ SortOrder = Literal[
  "Descending",
 ]
 
+StartingBalanceAccount = Literal[
+ "BankOrCashAccount",
+ "Customer",
+ "Supplier",
+ "Employee",
+ "InventoryItem",
+ "Investment",
+ "FixedAsset",
+ "IntangibleAsset",
+ "CapitalAccount",
+ "SpecialAccount",
+ "Other",
+]
+
 StartingBalanceType = Literal[
  "PaidInAdvance",
  "AmountToPay",
@@ -396,6 +463,7 @@ TextCustomFieldType = Literal[
  "SingleLineText",
  "ParagraphText",
  "DropdownList",
+ "QrCode",
 ]
 
 UserPermissionsAccessType = Literal[
