@@ -1,0 +1,2 @@
+[build-system]
+requires = ["setuptools==75.8.0"]  # metadata-version = "2.2"
