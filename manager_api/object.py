@@ -130,10 +130,5 @@ class Object(ManagerBaseModel):
 
     def attach_file(self, filename):
         url = self._session._get_url("NewAttachment", self.Key, b"\x0a")
-        headers = {
-            "Content-Type": "application/octet-stream",
-            "X-File-Name": os.path.basename(filename),
-            "X-File-Type": mimetypes.guess_type(filename)[0],
-        }
         with open(filename, "rb") as fp:
-            self._session.post(url, data=fp.read(), headers=headers)
+            response = self._session.post(url, files={os.path.basename(filename): fp.read()})
